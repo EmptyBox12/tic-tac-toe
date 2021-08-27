@@ -1,0 +1,32 @@
+body,html{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100%;
+    width: 100%;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#container{
+    display: grid;
+    width: 300px;
+    height: 300px;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+.buttons{
+    background-color: white;
+    border: none;
+    border-right: solid black 1px;
+    border-bottom: solid black 1px;
+}
+#button7,#button8,#button9{
+    border-bottom: none;
+}
+#button3,#button6,#button9{
+    border-right: none;
+}
