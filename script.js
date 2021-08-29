@@ -80,6 +80,8 @@ const gameBoard = (() => {
 
     };
     let clear = () => {
+        let head = document.querySelector("#head");
+        head.textContent="Tic-Tac-Toe";
         boardArray = [
             "", "", "",
             "", "", "",
@@ -120,6 +122,7 @@ const playerCreater = (name, mark) => {
 
 
 const game = (() => {
+    let head = document.querySelector("#head");
     let playersArray = [];
     const submitPlayer = document.querySelector("#submitButton");
     submitPlayer.addEventListener("click", function () {
@@ -186,10 +189,10 @@ const game = (() => {
     let marker = (player, id) => {
         gameBoard.changeValue(id, player.getMark());
         if (gameBoard.checkWin()) {
-            alert(player.getName() + " is the winner");
+            head.textContent=player.getName() + " is the winner";
            
         } else if (gameBoard.checkTie()) {
-            alert("TIE");
+            head.textContent="TIE";
             
         }
 
