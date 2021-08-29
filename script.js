@@ -187,9 +187,10 @@ const game = (() => {
         gameBoard.changeValue(id, player.getMark());
         if (gameBoard.checkWin()) {
             alert(player.getName() + " is the winner");
-        }
-        if (gameBoard.checkTie()) {
+           
+        } else if (gameBoard.checkTie()) {
             alert("TIE");
+            
         }
 
     };
