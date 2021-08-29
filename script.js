@@ -88,7 +88,7 @@ const gameBoard = (() => {
         updateBoard();
     }
 
-    return { changeValue, checkEmpty, checkTie, checkWin,clear };
+    return { changeValue, checkEmpty, checkTie, checkWin, clear };
 
 })();
 
@@ -120,30 +120,36 @@ const playerCreater = (name, mark) => {
 
 
 const game = (() => {
+    let playersArray = [];
+    const submitPlayer = document.querySelector("#submitButton");
+    submitPlayer.addEventListener("click", function () {
+        const modal = document.querySelector("#modal");
+        const playerMark = document.getElementsByName('options');
 
+        let firstName = firstInput.value;
+        let secondName = secondInput.value;
 
-    let createPlayers = () => {
-        let player1name = prompt("Player 1 Name", "name");
-        let player1mark = prompt("Player 1 mark", "X");
-        player1mark = player1mark.toUpperCase();
-        let player1 = playerCreater(player1name, player1mark);
-
-
-        let player2name = prompt("player2 name");
-        let player2mark;
-        if (player1mark == "X") {
-            player2mark = "O";
-        } else {
-            player2mark = "X";
+        let readValue="";
+        for (i = 0; i < playerMark.length; i++) {
+            if (playerMark[i].checked)
+                readValue = playerMark[i].value;
         }
-        let player2 = playerCreater(player2name, player2mark);
-        let playerArray = [player1, player2];
-        return playerArray;
 
-    };
-    let playersArray = createPlayers();
+        let player1 = playerCreater(firstName, readValue);
+        let player2Mark="";
+        if (readValue == "X") {
+            player2Mark = "O"
+
+        } else {
+            player2Mark = "X";
+        }
+        let player2 = playerCreater(secondName, player2Mark);
+        modal.style.display = "none";
+        playersArray = [player1, player2];
 
 
+
+    })
 
     let decideTurn = (playersArray, id) => {
         if (playersArray[0].checkTurn() === true) {
@@ -187,10 +193,14 @@ const game = (() => {
         }
 
     };
-   
 
-    return { markSquare };
+
+    return { markSquare};
 
 })();
 game.markSquare();
-//add clear
+let playAgain = document.querySelector("#playAgain");
+playAgain.addEventListener("click", ()=>{
+    gameBoard.clear();
+})
+

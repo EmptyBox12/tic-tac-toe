@@ -8,6 +8,25 @@
     <title>Document</title>
 </head>
 <body>
+    <div id="head">
+        Tic-Tac-Toe
+    </div>
+    <div id="modal">
+        <div id="modalContent">
+            <input type="text" value="" placeholder="First Player Name" id="firstInput" >
+            <input type="text" value="" placeholder="Second Player Name" id="secondInput">
+            <p> First Player Mark</p>
+            <div id="readRadio">
+                <input type="radio" value="X" name="options" id="X">
+                <label for="X">X</label>
+                <input type="radio" value="O" name="options" id="O">
+                <label for="O">O</label>
+            </div>
+            <input type="submit" value="Submit" id="submitButton">
+
+
+        </div>
+    </div>
     <div id="container">
         <button class="buttons" id="button1" data-id="0"></button>
         <button class="buttons" id="button2" data-id="1"></button>
@@ -18,6 +37,10 @@
         <button class="buttons" id="button7" data-id="6"></button>
         <button class="buttons" id="button8" data-id="7"></button>
         <button class="buttons" id="button9" data-id="8"></button>
+    </div>
+    <button id="playAgain">Play Again</button>
+    <div id="bottom">
+
     </div>
     
 </body>

@@ -8,25 +8,121 @@ body{
     background-color: aliceblue;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content:space-around;
     align-items: center;
 }
 #container{
     display: grid;
-    width: 300px;
-    height: 300px;
+    flex: 2;
+    margin-bottom: 30px;
+    width: 400px;
+    height: 400px;
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: repeat(3, 1fr);
 }
 .buttons{
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     border: none;
-    border-right: solid black 1px;
-    border-bottom: solid black 1px;
+    border-right: solid black 2px;
+    border-bottom: solid black 2px;
+    font-size: 3em;
+    color: rgb(60, 2, 102);
+
 }
 #button7,#button8,#button9{
     border-bottom: none;
 }
 #button3,#button6,#button9{
     border-right: none;
+}
+#head{
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+    color: indigo;
+    flex: 1;
+    margin-top: 80px;
+    
+  
+}
+#bottom{
+    flex: 1;
+}
+#modal{
+    display: block;
+    position: fixed;
+    z-index: 9999;
+    padding-top:300px;
+    height:100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.4);
+
+    
+
+
+}
+#modalContent{
+    position: relative;
+    margin: auto;
+    background-color: #fefefe;
+    display: flex;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 15px;
+    flex-direction: column;
+    justify-content: space-around;
+    height:45%;
+    width: 340px;
+    
+}
+#modalContent p{
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    color: indigo;
+    font-family: sans-serif;
+}
+#firstInput, #secondInput{
+    height: 30px;
+    font-size: 17px;
+    font-weight: 540;
+    border:black solid 1px;
+    border-radius: 9px;
+    outline: none;
+    padding-left: 7px;
+    
+}
+#readRadio{
+    text-align: center;
+    font-size: 17px;
+    font-weight: 500;
+}
+#O{
+    margin-left: 70px;
+    
+}
+#submitButton{
+    height: 30px;
+    border-radius: 15px;
+    background-color: rgb(236, 215, 221);
+}
+#submitButton:hover{
+    filter: brightness(0.95);
+}
+#submitButton:active{
+    filter:brightness(0.9);
+}
+#playAgain{
+    height: 30px;
+    border-radius: 15px;
+    background-color: rgb(216, 184, 184);
+    color: indigo;
+    font-weight: bold;
+    font-size: 15px;
+    padding-left: 9px;
+    padding-right: 9px;
 }
